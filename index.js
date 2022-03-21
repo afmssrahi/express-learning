@@ -1,8 +1,15 @@
 const express = require('express');
 const fs = require('fs');
+const cors = require('cors');
+const morgan = require('morgan');
 
 const app = express();
 const port = process.env.PORT || 5000;
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+// app.use(morgan('dev'));
+app.use(cors());
 
 app.get('/', (req, res) => {
 	fs.readFile('./pages/index.html', (err, data) => {
@@ -16,7 +23,7 @@ app.get('/', (req, res) => {
 	});
 });
 
-app.get('/about', async (req, res) => {
+app.get('/about', morgan('dev'), async (req, res) => {
 	fs.readFile('./pages/about.html', (err, data) => {
 		if (err) {
 			console.log('Error', err);
