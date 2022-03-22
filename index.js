@@ -11,6 +11,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 app.use(cors());
 app.use(globalMiddleware);
+app.use(express.static('./public'));
+
 app.use(require('./routes'));
 
 app.use((req, res, next) => {
