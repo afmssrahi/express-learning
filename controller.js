@@ -1,39 +1,14 @@
-const fs = require('fs');
-
 exports.homeController = (req, res) => {
 	// throw new Error('Something went wrong');
+	const title = 'Dynamic title (Home)';
 
-	fs.readFile('./pages/index.html', (err, data) => {
-		if (err) {
-			console.log('Error', err);
-			res.send('<h1>Something went wrong.</h1>');
-		} else {
-			res.write(data);
-			res.end();
-		}
-	});
+	res.render('pages/home', { title });
 };
 
 exports.aboutController = (req, res) => {
-	fs.readFile('./pages/about.html', (err, data) => {
-		if (err) {
-			console.log('Error', err);
-			res.send('<h1>Something went wrong.</h1>');
-		} else {
-			res.write(data);
-			res.end();
-		}
-	});
+	res.render('pages/about');
 };
 
 exports.productsController = (req, res) => {
-	fs.readFile('./pages/products.html', (err, data) => {
-		if (err) {
-			console.log('Error', err);
-			res.send('<h1>Something went wrong.</h1>');
-		} else {
-			res.write(data);
-			res.end();
-		}
-	});
+	res.render('pages/products');
 };

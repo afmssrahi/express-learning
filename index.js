@@ -6,6 +6,9 @@ const morgan = require('morgan');
 const app = express();
 const port = process.env.PORT || 5000;
 
+app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views');
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));

@@ -13,13 +13,32 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
     integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous">
   </script>
+
+
+  <!-- Main style -->
+  <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
-  <div class="container bg-primary text-white">
-    <h1>Hello-Bootstrap from express public folder</h1>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est tempore explicabo magnam? Fuga repellat quas nulla
-      recusandae corporis culpa et itaque, labore expedita doloribus ipsa, unde esse sit nihil natus?</p>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/products">Products</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container bg-secondary text-white p-5">
+    <h1><%= title %> </h1>
+    <small>Date: <%= new Date().toLocaleString() %> </small>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est tempore explicabo magnam? Fuga repellat quas nulla
+      recusandae corporis culpa et itaque, labore expedita doloribus ipsa, unde esse sit nihil natus?
+    </p>
+
+    <button class="btn btn-primary">Call Me</button>
   </div>
 </body>
 
